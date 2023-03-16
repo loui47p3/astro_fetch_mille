@@ -1,15 +1,32 @@
 ---
+import { Debug } from "astro/components";
+
+const url = "https://wjveowukcncyshyvryuu.supabase.co/rest/v1/test_personer";
+
+const options = {
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndqdmVvd3VrY25jeXNoeXZyeXV1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2Nzg3ODY5ODMsImV4cCI6MTk5NDM2Mjk4M30.9V1A8hj8-v155eQSlFHYGxU6_Lp3k9xa7epuIXwBAmc",
+  },
+};
+
+const response = await fetch(url, options);
+const data = await response.json();
 ---
 
+<details>
+  <summary>Debugger</summary>
+  <Debug {data} />
+</details>
+
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body>
+    <h1>Astro</h1>
+  </body>
 </html>
